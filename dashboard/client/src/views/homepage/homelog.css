@@ -1,0 +1,80 @@
+/* homepage */
+.background{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #0051ac;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    width: 100vw;
+    background-image: url(	https://impact.codeninjas.com/assets/login-bg.svg);
+}
+
+.description{
+    padding: 45px 72px;
+    border: 1px solid #fcfdff57;
+    border-radius: 16px;
+    background-color: #ffffff12;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.logo{
+    width: 364px;
+}
+
+.dashboard-title{
+    margin: 13px auto;
+    font: normal normal 1200 25px / 32px Azo Sans, sans-serif;
+    letter-spacing: -0.8px;
+    color: #fcfdff;
+    opacity: 1;
+    text-align: center;
+    text-shadow: 0 3px 6px #19216359;
+}
+
+.dashboardButtons{
+    cursor: pointer;
+    font: normal normal 600 18px / 22px Azo Sans, sans-serif;
+    letter-spacing: -.45px;
+    color: #fcfdff;
+    text-align: center;
+    display: inline-grid;
+    margin: 5% 15% 10%;
+    text-decoration: none;
+    width: 20%;
+    text-shadow: 0 3px 6px #19216359;
+}
+
+.IMPACTbutton{
+    cursor: pointer;
+    font: normal normal 600 25px / 22px Azo Sans, sans-serif;
+    letter-spacing: -.45px;
+    color: #fcfdff;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 3px 6px #19216359;
+}
+
+/* login page*/
+.loginButtons{
+    display: grid; 
+    align-items: center;
+}
+.btns, .submit{
+    margin: 10px 0 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+.btns::placeholder{
+    font-size: 16px;
+}
+.submit{
+    margin: 15px auto 0;
+}

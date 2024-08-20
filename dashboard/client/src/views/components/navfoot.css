@@ -1,0 +1,36 @@
+.navbar, .foot{
+    max-width: 100%;
+    background-color: #1060bb;;
+    height: 40px;
+    padding: 26px 20px;
+    position: sticky;  
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.dashboardTitle{
+    text-shadow: 0 3px 6px #19216359;
+    margin-left: 20px; 
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+.btn{
+    width: 65px;
+    height: 55px;
+    float: right;
+}
+.foot{
+    bottom: 0;
+    position: sticky;
+    height: 53vh;
+    margin-top: 33px;
+    background-color: #034086;;
+    color: rgb(199, 199, 199);
+}
+
+.logout{
+    background-image: url('https://impact.codeninjas.com/assets/home.svg')
+}
