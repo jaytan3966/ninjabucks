@@ -266,4 +266,9 @@ tr:nth-child(even){
     border-radius: 20px;
     font-size: 20px;
     font-weight: 750;
+    bottom: 1;
+}
+.imgs{
+    max-width: 23vw;
+    height: 246px;
 }

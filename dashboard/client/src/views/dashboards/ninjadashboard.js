@@ -4,6 +4,15 @@ import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer"
 
+const Reward = ({ name, imgSrc, cost, redeemPrize }) => {
+    return (
+        <td>
+            <div>{name}</div>
+            <div><img src={require(`${imgSrc}`)} className="imgs" alt={name}></img></div>
+            <div><button className="redeemBtns" onClick={() => redeemPrize(cost, `${cost} Redeemed ${name}`)}>{cost} NinjaBucks</button></div>
+        </td>
+)}
+
 export default function NinjaDashboard(){
 
     const token = localStorage.getItem('token');
@@ -13,6 +22,7 @@ export default function NinjaDashboard(){
     const [myBal, setBal] = useState(0);
     const name = userInfo.name;
     const loc = userInfo.location;
+
     useEffect(() =>{
         getInfo();
     }, [valChanged]);
@@ -53,7 +63,7 @@ export default function NinjaDashboard(){
             },
             body: JSON.stringify({ name, loc, cmnt })
         });
-        alert(`Redeemed prize! Ask a sensei for your reward!`)
+        alert(`${cmnt}! Ask a sensei for your reward!`)
         setvalChanged(prev => !prev);
     }
     return (
@@ -70,48 +80,56 @@ export default function NinjaDashboard(){
                     <h1>NinjaBucks Rewards</h1>
                     <table>
                         <tr>
-                            <td>
-                                <div>Code Ninjas Playing Cards</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninjas Playing Cards")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Code Ninjas Water Bottle</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninjas Water Bottle")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Code Ninjas Drawstring Bag</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninjas Drawstring Bag")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Code Ninjas Stress Ball</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninjas Stress Ball")}>-1000 NinjaBucks</button></div>
-                            </td>
+                            <Reward 
+                                name="Code Ninjas Playing Cards"
+                                imgSrc="./rewardImgs/cards.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Code Ninjas Water Bottle"
+                                imgSrc="./rewardImgs/waterbottle.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Code Ninjas Drawstring Bag"
+                                imgSrc="./rewardImgs/bag.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Code Ninjas Stress Ball"
+                                imgSrc="./rewardImgs/ball.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
                         </tr>
                         <tr>
-                            <td>
-                                <div>Code Ninjas Sunglasses</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninjas Sunglasses")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Katana Thumb Drive</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Katana Thumb Drive")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Code Ninja Headband</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-1000, "-1000 Redeemed Code Ninja Headband")}>-1000 NinjaBucks</button></div>
-                            </td>
-                            <td>
-                                <div>Pie a Sensei</div>
-                                <div>Image</div>
-                                <div><button className="redeemBtns" onClick={() => redeemPrize(-7500, "-7500 Redeemed Pie a Sensei")}>-7500 NinjaBucks</button></div>
-                            </td>
+                            <Reward 
+                                name="Code Ninjas Sunglasses"
+                                imgSrc="./rewardImgs/glasses.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Katana Thumb Drive"
+                                imgSrc="./rewardImgs/thumbdrive.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Code Ninja Headband"
+                                imgSrc="./rewardImgs/headband.jpg"
+                                cost="-1000"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
+                            <Reward 
+                                name="Pie a Sensei"
+                                imgSrc="./rewardImgs/pie.jpg"
+                                cost="-7500"
+                                redeemPrize = {(amnt, cmnt) => redeemPrize(amnt, cmnt)}
+                            />
                         </tr>
                     </table>
                 </div>

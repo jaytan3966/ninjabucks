@@ -7,10 +7,31 @@ import SenseiDashboard from "./views/dashboards/senseidashboard";
 import TransactionHistory from './views/dashboards/transactionhistory';
 import NinjaHistory from './views/dashboards/ninjahistory';
 
-function ProtectedRoute({children}){
+function ProtectedRoute({children, openAccess}){
     const token = localStorage.getItem('token');
-    return token ? children: <Navigate to="/" />
+    const userInfo = JSON.parse(atob(token.split('.')[1]));
+
+    if(token){
+        if (userInfo.location === "Demo"){
+            return children;
+        } else {
+            try {
+                const publicAccess = openAccess === "True";
+                return publicAccess ? children: <NavigateToRoot/>
+            } catch {
+                return <NavigateToRoot/>
+            }
+        }
+    } else {
+        return <NavigateToRoot/>
+    }
 }
+
+function NavigateToRoot() {
+    localStorage.removeItem('token');
+    return <Navigate to="/" />;
+}
+
 
 function App(){
     return(
@@ -19,15 +40,12 @@ function App(){
                 <Route exact path="/" element={<Home/>}></Route>
                 <Route exact path="/SenseiLogin" element={<Login title="Sensei"/>}></Route>
                 <Route exact path="/NinjaLogin" element={<Login title="Ninja"/>}></Route>
-                <Route exact path="/NinjaDashboard" element={<ProtectedRoute><NinjaDashboard/></ProtectedRoute>}></Route>
-                <Route exact path="/SenseiView" element={<ProtectedRoute><SenseiDashboard/></ProtectedRoute>}></Route>
-                <Route exact path="/Transactions" element={<ProtectedRoute><TransactionHistory/></ProtectedRoute>}></Route>
-                <Route exact path="/NinjaHistory" element={<ProtectedRoute><NinjaHistory/></ProtectedRoute>}></Route>
+                <Route exact path="/NinjaDashboard" element={<ProtectedRoute openAccess="True"><NinjaDashboard/></ProtectedRoute>}></Route>
+                <Route exact path="/SenseiView" element={<ProtectedRoute openAccess="False"><SenseiDashboard/></ProtectedRoute>}></Route>
+                <Route exact path="/Transactions" element={<ProtectedRoute openAccess="False"><TransactionHistory/></ProtectedRoute>}></Route>
+                <Route exact path="/NinjaHistory" element={<ProtectedRoute openAccess="True"><NinjaHistory/></ProtectedRoute>}></Route>
             </Routes>      
         </BrowserRouter>
-        
-        
-        
     )
     
 }

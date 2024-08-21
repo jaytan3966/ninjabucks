@@ -13,10 +13,7 @@
     "reactjs-popup": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://jaytan3966.github.io/ninjabucks",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
