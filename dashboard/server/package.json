@@ -4,11 +4,6 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "install-server": "cd backend && npm install",
-    "start-server": "cd backend && node app.js",
-    "install-client": "cd client && npm install",
-    "build-client": "cd client && npm run build",
-    "start-client": "cd client && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
