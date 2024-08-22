@@ -2,6 +2,8 @@ import React from 'react';
 import './homelog.css';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default function Login(props) {
     const title = props.title;
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ export default function Login(props) {
         } else {
             collection = "ninjaLogin"
         }
-        let response = await fetch("http://localhost:3001/records/login", {
+        let response = await fetch(`${API_URL}/records/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
