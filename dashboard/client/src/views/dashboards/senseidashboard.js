@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import Popup from 'reactjs-popup';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Ninjas = (props) => (
     <tr>
         <td className="names">{props.ninja.name}</td>
@@ -35,7 +37,7 @@ export default function SenseiDashboard(){
     }, [loc, valChanged]);
 
     async function getNinjas(loc){
-        let response = await fetch(`http://localhost:3001/records/${loc}`)
+        let response = await fetch(`${API_URL}/records/${loc}`)
         
         if(!response.ok){
             console.error(`An error occurred: ${response.statusText}`);
@@ -52,7 +54,7 @@ export default function SenseiDashboard(){
             getNinjas(loc);
             return; 
         }
-        let response = await fetch(`http://localhost:3001/records/${name}/${loc}`);
+        let response = await fetch(`${API_URL}/records/${name}/${loc}`);
         if(!response.ok){
             console.error(`An error occurred: ${response.statusText}`);
             alert("Ninja not found")
@@ -89,7 +91,7 @@ export default function SenseiDashboard(){
         let amnt = document.getElementById(id).value;
         if (amnt !== '' && !isNaN(amnt)){
             amnt = parseInt(amnt)*parseInt(direction);
-            let response = await fetch(`http://localhost:3001/records/${id}/${amnt}`, {
+            let response = await fetch(`${API_URL}/records/${id}/${amnt}`, {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'
@@ -111,7 +113,7 @@ export default function SenseiDashboard(){
     async function addComment(name){
         let cmnt = document.getElementById(name).value;
         if (cmnt !== ''){
-            let response = await fetch(`http://localhost:3001/records/comments`, {
+            let response = await fetch(`${API_URL}/records/comments`, {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'
@@ -135,7 +137,7 @@ export default function SenseiDashboard(){
         let pwd = document.getElementById("newPwd").value;
 
         if (name !== '' && pwd !== ''){
-            let response = await fetch(`http://localhost:3001/records/`, {
+            let response = await fetch(`${API_URL}/records/`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -159,7 +161,7 @@ export default function SenseiDashboard(){
     }
     async function deleteNinja(id, name){
         const delNin = true;
-        let response = await fetch(`http://localhost:3001/records/${id}`, {
+        let response = await fetch(`${API_URL}/records/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

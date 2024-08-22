@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Comments = (props) => {
     return (
         <tr>
@@ -26,7 +28,7 @@ export default function NinjaHistory() {
     }, [name])
 
     async function getCmnts(){
-        let response = await fetch(`http://localhost:3001/records/comments/${name}/${loc}`);
+        let response = await fetch(`${API_URL}/records/comments/${name}/${loc}`);
 
         if(!response.ok){
             console.error(`An error occurred: ${response.statusText}`);

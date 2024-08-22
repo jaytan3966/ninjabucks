@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer"
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Reward = ({ name, imgSrc, cost, redeemPrize }) => {
     return (
         <td>
@@ -28,7 +30,7 @@ export default function NinjaDashboard(){
     }, [valChanged]);
 
     async function getInfo(){
-        let response = await fetch(`http://localhost:3001/records/${name}/${loc}`);
+        let response = await fetch(`${API_URL}/records/${name}/${loc}`);
         if(!response.ok){
             console.error(`An error occurred: ${response.statusText}`);
             return;
@@ -44,7 +46,7 @@ export default function NinjaDashboard(){
             return;
         }
         //modify balance 
-        let response = await fetch(`http://localhost:3001/records/ninja`, {
+        let response = await fetch(`${API_URL}/records/ninja`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +58,7 @@ export default function NinjaDashboard(){
             return;
         }
         //add comment
-        response = await fetch("http://localhost:3001/records/comments", {
+        response = await fetch(`${API_URL}/records/comments`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Transaction = (props) => (
     <tr>
         <td>{props.transaction.date}</td>
@@ -26,7 +28,7 @@ export default function TransactionHistory(){
     }, [])
 
     async function getTransactions() {
-        let response = await fetch(`http://localhost:3001/records/${loc}`);
+        let response = await fetch(`${API_URL}/records/${loc}`);
         if (!response.ok){
             console.error(`An error occurred: ${response.statusText}`);
             return;
@@ -52,7 +54,7 @@ export default function TransactionHistory(){
             getTransactions(loc);
             return; 
         }
-        let response = await fetch(`http://localhost:3001/records/comments/${name}/${loc}`);
+        let response = await fetch(`${API_URL}/records/comments/${name}/${loc}`);
         if(!response.ok){
             console.error(`An error occurred: ${response.statusText}`);
             alert("Comments not found")
@@ -68,7 +70,7 @@ export default function TransactionHistory(){
     async function delTransac(id, cmnt, location, name){
         const delNin = false;
         let comment = document.getElementById(cmnt).innerText;
-        let response = await fetch(`http://localhost:3001/records/${id}`, {
+        let response = await fetch(`${API_URL}/records/${id}`, {
             method: "DELETE", 
             headers: {
                 'Content-Type': 'application/json'
