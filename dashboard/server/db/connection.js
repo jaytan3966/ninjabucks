@@ -2,15 +2,14 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 const uri = process.env.ATLAS_URI;
 const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    ssl: true,
-    tlsAllowInvalidCertificates: false,
     serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-    }
+    },
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+    tlsVersion: 'TLSv1.2',
 })
 
 async function connectToDataBase(){
