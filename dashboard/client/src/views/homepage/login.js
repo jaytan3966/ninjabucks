@@ -27,9 +27,10 @@ export default function Login(props) {
         });
 
         if (!response.ok) {
+            alert("METRO");
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         let text = await response.text();
 
         if (text){
