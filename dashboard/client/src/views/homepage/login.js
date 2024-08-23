@@ -26,9 +26,8 @@ export default function Login(props) {
             body: JSON.stringify({ name, password, collection })
         });
 
-        if (!response.ok) {
+        if (response.ok) {
             alert("METRO");
-            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         let text = await response.text();
