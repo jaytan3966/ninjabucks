@@ -57,7 +57,6 @@ export default function Login(props) {
                     <input type="text" placeholder='Enter password here...' className='btns' id="pwd" autoComplete='off'></input>
                     <button className='submit' onClick={onSubmit}>Submit</button>
                 </div>
-                
             </div> 
         </div>
     )
