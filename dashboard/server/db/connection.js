@@ -6,6 +6,7 @@ const client = new MongoClient(uri, {
     useUnifiedTopology: true,
     ssl: true,
     tlsAllowInvalidCertificates: false,
+    tlsVersion: 'TLSv1.2',
     serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
