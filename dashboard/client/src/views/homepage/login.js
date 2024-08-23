@@ -18,7 +18,7 @@ export default function Login(props) {
         } else {
             collection = "ninjaLogin"
         }
-        let response = await fetch(`${API_URL}/records/login`, {
+        let response = await fetch(`https://ninjabucksdashboard.onrender.com/records/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -56,6 +56,8 @@ export default function Login(props) {
             }
         } else {
             alert("Empty response from server.");
+            document.getElementById("name").value = '';
+            document.getElementById("pwd").value = '';
         }
         setTimeout(() => {
             localStorage.removeItem('token');
