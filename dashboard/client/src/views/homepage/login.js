@@ -26,6 +26,10 @@ export default function Login(props) {
             body: JSON.stringify({ name, password, collection })
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         let text = await response.text();
 
         if (text){
@@ -56,6 +60,7 @@ export default function Login(props) {
             }
         } else {
             alert("Empty response from server.");
+
             document.getElementById("name").value = '';
             document.getElementById("pwd").value = '';
         }

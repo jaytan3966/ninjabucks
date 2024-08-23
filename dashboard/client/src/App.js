@@ -32,7 +32,6 @@ function NavigateToRoot() {
     return <Navigate to="/" />;
 }
 
-
 function App(){
     return(
         <BrowserRouter>     
@@ -47,7 +46,6 @@ function App(){
             </Routes>      
         </BrowserRouter>
     )
-    
 }
 
 export default App;
