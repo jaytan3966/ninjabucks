@@ -39,7 +39,7 @@ export default function Login(props) {
             }
         } else {
                 alert("An error occurred: " + result.message || response.statusText);
-            }
+        }
        
         document.getElementById("name").value = '';
         document.getElementById("pwd").value = '';
