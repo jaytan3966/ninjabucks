@@ -37,19 +37,25 @@ export default function Login(props) {
                 alert("Failed to parse server response.");
                 return;
             }
-        }
         
-        if (response.status === 200){
-            localStorage.setItem('token', result.token)
-            if (title === "Sensei"){
-                navigate('/SenseiView');
+            if (response.ok){
+                if (result.token){
+                localStorage.setItem('token', result.token)
+                if (title === "Sensei"){
+                    navigate('/SenseiView');
+                } else {
+                    navigate('/NinjaDashboard')
+                }
+                } else {
+                    alert("Invalid credentials!");
+                    document.getElementById("name").value = '';
+                    document.getElementById("pwd").value = '';
+                }
             } else {
-                navigate('/NinjaDashboard')
+                alert("An error occurred: " + result.message || response.statusText);
             }
         } else {
-            alert("Invalid credentials!");
-            document.getElementById("name").value = '';
-            document.getElementById("pwd").value = '';
+            alert("Empty response from server.");
         }
         setTimeout(() => {
             localStorage.removeItem('token');
