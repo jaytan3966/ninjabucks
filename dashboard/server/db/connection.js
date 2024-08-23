@@ -1,7 +1,11 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri = process.env.ATLAS_URI + "?tls=true";
+const uri = process.env.ATLAS_URI;
 const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tlsAllowInvalidCertificates: false,
     serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
