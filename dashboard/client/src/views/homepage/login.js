@@ -27,9 +27,9 @@ export default function Login(props) {
         });
 
         //response is ok but what is going on
-        alert(name, password, collection);
+
         let text = await response.text();
-        alert(text);
+
         if (text){
             let result;
             try{
