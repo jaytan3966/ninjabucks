@@ -25,8 +25,7 @@ export default function Login(props) {
             },
             body: JSON.stringify({ name, password, collection })
         });
-
-
+        let result = await response.json();
         if (response.ok){
             if (result.token){
                 localStorage.setItem('token', result.token)
