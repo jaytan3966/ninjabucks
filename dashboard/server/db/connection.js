@@ -6,10 +6,7 @@ const client = new MongoClient(uri, {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-    },
-    tls: true,
-    tlsAllowInvalidCertificates: false,
-    tlsVersion: 'TLSv1.2',
+    }
 })
 
 async function connectToDataBase(){
