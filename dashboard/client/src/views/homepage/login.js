@@ -26,7 +26,19 @@ export default function Login(props) {
             body: JSON.stringify({ name, password, collection })
         });
 
-        let result = await response.json();
+        let text = await response.text();
+
+        if (text){
+            let result;
+            try{
+                result = JSON.parse(text);
+            } catch (jsonError) {
+                console.error('JSON Parsing Error:', jsonError);
+                alert("Failed to parse server response.");
+                return;
+            }
+        }
+        
         if (response.status === 200){
             localStorage.setItem('token', result.token)
             if (title === "Sensei"){
