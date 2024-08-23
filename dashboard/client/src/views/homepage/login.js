@@ -26,40 +26,25 @@ export default function Login(props) {
             body: JSON.stringify({ name, password, collection })
         });
 
-        let text = await response.text();
 
-        if (text){
-            let result;
-            try{
-                result = JSON.parse(text);
-            } catch (jsonError) {
-                console.error('JSON Parsing Error:', jsonError);
-                alert("Failed to parse server response.");
-                return;
-            }
-        
-            if (response.ok){
-                if (result.token){
+        if (response.ok){
+            if (result.token){
                 localStorage.setItem('token', result.token)
                 if (title === "Sensei"){
                     navigate('/SenseiView');
                 } else {
                     navigate('/NinjaDashboard')
                 }
-                } else {
-                    alert("Invalid credentials!");
-                    document.getElementById("name").value = '';
-                    document.getElementById("pwd").value = '';
-                }
             } else {
-                alert("An error occurred: " + result.message || response.statusText);
+                alert("Invalid credentials!");
             }
         } else {
-            alert("Empty response from server.");
-
-            document.getElementById("name").value = '';
-            document.getElementById("pwd").value = '';
-        }
+                alert("An error occurred: " + result.message || response.statusText);
+            }
+       
+        document.getElementById("name").value = '';
+        document.getElementById("pwd").value = '';
+        
         setTimeout(() => {
             localStorage.removeItem('token');
             window.location.href = '/';
