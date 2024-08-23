@@ -26,8 +26,6 @@ export default function Login(props) {
             body: JSON.stringify({ name, password, collection })
         });
 
-        //response is ok but what is going on
-
         let text = await response.text();
 
         if (text){
