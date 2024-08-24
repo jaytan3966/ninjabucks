@@ -18,7 +18,7 @@ import cors from "cors";
 import ninjas from "./routes/records.js";
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 const uri = process.env.ATLAS_URI;
 
 const app = express();
