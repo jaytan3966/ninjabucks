@@ -1,6 +1,6 @@
 import express from "express";
 
-import db from "../db/server.js";
+import db from "../server.js"
 
 import { ObjectId } from "mongodb";
 
