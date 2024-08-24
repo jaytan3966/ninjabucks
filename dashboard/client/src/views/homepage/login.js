@@ -2,7 +2,7 @@ import React from 'react';
 import './homelog.css';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://ninjabucksdashboard.onrender.com";
 
 export default function Login(props) {
     const title = props.title;
@@ -12,8 +12,6 @@ export default function Login(props) {
         let name = document.getElementById("name").value;
         let password = document.getElementById("pwd").value;
         let collection;
-
-        console.log('API URL:', API_URL);
 
         if (title === "Sensei"){
             collection = "senseiLogin"
