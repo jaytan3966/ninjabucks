@@ -147,17 +147,15 @@ router.post("/login", async (req, res) => {
     let collection = await db.collection(req.body.collection);
     let user = await collection.findOne({name: req.body.name})
     try {
-        if (user) {
-            if (user.password === req.body.password){
-                //creates jsonwebtoken if user is valid
-                const token = jwt.sign({id: user._id, name: user.name, location: user.location }, secretKey, {expiresIn: '15m'});
-                
-                res.status(200).json({message: "Login success!", token});
-            } else {
-                return res.status(401).json({message: "Invalid credentials"})
-            }
+        if (user && user.password === password) {
+            const token = jwt.sign(
+                { id: user._id, name: user.name, location: user.location },
+                secretKey,
+                { expiresIn: '15m' }
+            );
+            return res.status(200).json({ message: "Login success!", token });
         } else {
-            return res.status(404).json({message: "Invalid credentials"});
+            return res.status(401).json({ message: "Invalid credentials" });
         }
     } catch (err) {
         res.status(500).json({ message: "Internal server error" });

@@ -12,7 +12,9 @@ export default function Login(props) {
         let name = document.getElementById("name").value;
         let password = document.getElementById("pwd").value;
         let collection;
-        
+
+        console.log('API URL:', API_URL);
+
         if (title === "Sensei"){
             collection = "senseiLogin"
         } else {
