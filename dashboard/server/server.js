@@ -30,7 +30,7 @@ async function startServer() {
         });
 
         await client.connect();
-        db = client.db("ninjabalances");
+        db = await client.db("ninjabalances");
         await client.db("ninjabalances").command({ ping: 1 });
         console.log("Pinged your deployment. Successfully connected to MongoDB!");
 
