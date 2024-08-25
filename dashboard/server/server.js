@@ -9,7 +9,7 @@ const uri = process.env.ATLAS_URI;
 const app = express();
 
 app.use(cors({
-    origin: 'https://ninjabucksdashboard-fjcn.onrender.com',
+    origin: '*',
     methods: ['GET', 'PATCH', 'DELETE', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
