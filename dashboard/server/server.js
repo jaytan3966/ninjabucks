@@ -32,13 +32,17 @@ async function startServer() {
 
         await client.connect();
         db = await client.db("ninjabalances");
-        await client.db("ninjabalances").command({ ping: 1 });
-        console.log("Pinged your deployment. Successfully connected to MongoDB!");
-
-        app.listen(PORT, '0.0.0.0', () => {
-            console.log(`Server is running on port ${PORT}`);
-        });
-
+        if (db) {
+            await client.db("ninjabalances").command({ ping: 1 });
+            console.log("Pinged your deployment. Successfully connected to MongoDB!");
+    
+            app.listen(PORT, '0.0.0.0', () => {
+                console.log(`Server is running on port ${PORT}`);
+            });
+        } else {
+            console.error("Failed to connect to database");
+        }
+    
     } catch (err) {
         console.error("Failed to connect to MongoDB", err);
     }
