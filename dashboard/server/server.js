@@ -19,9 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use("/records", ninjas);
 
-let db;
-async function startServer() {
-    try {
+
         const client = new MongoClient(uri, {
             serverApi: {
                 version: ServerApiVersion.v1,
@@ -31,7 +29,7 @@ async function startServer() {
         });
 
         await client.connect();
-        db = await client.db("ninjabalances");
+        const db = await client.db("ninjabalances");
         if (db) {
             await client.db("ninjabalances").command({ ping: 1 });
             console.log("Pinged your deployment. Successfully connected to MongoDB!");
@@ -42,12 +40,5 @@ async function startServer() {
         } else {
             console.error("Failed to connect to database");
         }
-    
-    } catch (err) {
-        console.error("Failed to connect to MongoDB", err);
-    }
-}
-
-startServer();
 
 export default db;
