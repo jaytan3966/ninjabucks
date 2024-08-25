@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors({
     origin: '*',
-    methods: ['GET', 'PATCH', 'DELETE', 'POST'],
+    methods: ['GET', 'PATCH', 'DELETE', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
