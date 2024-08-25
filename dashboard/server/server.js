@@ -8,7 +8,7 @@ const uri = process.env.ATLAS_URI;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'https://ninjabucksdashboard-fjcn.onrender.com' }));
 app.use(express.json());
 app.use("/records", ninjas);
 
