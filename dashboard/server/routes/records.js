@@ -10,6 +10,9 @@ const router = express.Router();
 
 const secretKey = process.env.jwtSecret;
 
+router.get("/test", async (req, res) => {
+    return res.send({"test": "success"}).status(200);
+})
 //find specific ninja by name and location
 router.get("/:name/:loc", async (req, res) => {
     let ninja = req.params.name;
