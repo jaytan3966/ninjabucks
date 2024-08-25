@@ -152,7 +152,7 @@ router.post("/login", async (req, res) => {
     let collection = await db.collection(req.body.collection);
     let user = await collection.findOne({name: req.body.name})
     try {
-        if (user && user.password === password) {
+        if (user && user.password === req.body.password) {
             const token = jwt.sign(
                 { id: user._id, name: user.name, location: user.location },
                 secretKey,
