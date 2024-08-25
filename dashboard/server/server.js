@@ -19,26 +19,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use("/records", ninjas);
 
+const client = new MongoClient(uri, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
 
-        const client = new MongoClient(uri, {
-            serverApi: {
-                version: ServerApiVersion.v1,
-                strict: true,
-                deprecationErrors: true,
-            }
-        });
-
-        await client.connect();
-        const db = await client.db("ninjabalances");
-        if (db) {
-            await client.db("ninjabalances").command({ ping: 1 });
-            console.log("Pinged your deployment. Successfully connected to MongoDB!");
+await client.connect();
+const db = await client.db("ninjabalances");
+if (db) {
+    await client.db("ninjabalances").command({ ping: 1 });
+    console.log("Pinged your deployment. Successfully connected to MongoDB!");
     
-            app.listen(PORT, '0.0.0.0', () => {
-                console.log(`Server is running on port ${PORT}`);
-            });
-        } else {
-            console.error("Failed to connect to database");
-        }
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+} else {
+    console.error("Failed to connect to database");
+}
 
 export default db;
