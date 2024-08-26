@@ -14,13 +14,12 @@ NinjaBucks Dashboard is a web application that allows users to manage and intera
 
 Watch the dashboard in action [here](https://github.com/user-attachments/assets/a77bf62b-7780-4bde-a2e5-4e44fb8f217d)!
 
-Thank you for checking out the NinjaBucks Dashboard! I appreciate your interest and support. If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
+## Important Notice
+Access Restricted:
+Thank you for your interest in the [NinjaBucksDashboard](https://ninjabucksdashboard-fjcn.onrender.com/). Unfortunately, this application is intended for internal use at CodeNinjasRFR and is not publicly accessible. However, I appreciate you for checking out the NinjaBucks Dashboard! If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
 
 \-Jayden Tan, 2024
 
-## Important Notice
-Access Restricted:
-Thank you for your interest in the [NinjaBucksDashboard](https://ninjabucksdashboard-fjcn.onrender.com/). Unfortunately, this application is intended for internal use at CodeNinjas and is not publicly accessible. We apologize for any inconvenience this may cause.
 
 
 
