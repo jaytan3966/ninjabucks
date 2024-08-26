@@ -11,7 +11,7 @@ NinjaBucks Dashboard is a web application that allows users to manage and intera
 ## Usage:
 * **Login**: Users can log in as either a Sensei or a Ninja.
 * **Dashboard**: Manage ninjas, view transaction history, and redeem rewards.
-* Access the deployed application at https://ninjabucksdashboard-fjcn.onrender.com
+* Access the deployed application [here](https://ninjabucksdashboard-fjcn.onrender.com)!
 
 Thank you for checking out the NinjaBucks Dashboard! We appreciate your interest and support. If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
 
