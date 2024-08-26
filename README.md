@@ -13,7 +13,7 @@ NinjaBucks Dashboard is a web application that allows users to manage and intera
 * **Dashboard**: Manage ninjas, view transaction history, and redeem rewards.
 * Access the deployed application [here](https://ninjabucksdashboard-fjcn.onrender.com)!
 
-Thank you for checking out the NinjaBucks Dashboard! We appreciate your interest and support. If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
+Thank you for checking out the NinjaBucks Dashboard! I appreciate your interest and support. If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
 
 \-Jayden Tan, 2024
 
