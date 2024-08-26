@@ -18,13 +18,6 @@ export default function Login(props) {
         } else {
             collection = "ninjaLogin"
         }
-        console.log({
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-                body: JSON.stringify({ name, password, collection} )
-        });
         let response = await fetch(`${API_URL}/records/login`, {
             method: "POST",
             headers: {

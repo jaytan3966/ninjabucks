@@ -146,9 +146,7 @@ router.post("/", async (req, res) => {
 
 //searching for login details
 router.post("/login", async (req, res) => {
-    if (!db) {
-        return res.send({"status": "error"});
-    }
+
     let collection = await db.collection(req.body.collection);
     let user = await collection.findOne({name: req.body.name})
     try {
