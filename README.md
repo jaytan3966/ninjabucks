@@ -12,7 +12,7 @@ NinjaBucks Dashboard is a web application that allows users to manage and intera
 * **Login**: Users can log in as either a Sensei or a Ninja.
 * **Dashboard**: Manage ninjas, view transaction history, and redeem rewards.
 
-Watch the dashboard in action [here]((https://github.com/user-attachments/assets/a77bf62b-7780-4bde-a2e5-4e44fb8f217d))!
+Watch the dashboard in action [here](https://github.com/user-attachments/assets/a77bf62b-7780-4bde-a2e5-4e44fb8f217d)!
 
 Thank you for checking out the NinjaBucks Dashboard! I appreciate your interest and support. If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
 
