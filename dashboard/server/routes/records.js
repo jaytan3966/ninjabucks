@@ -104,7 +104,7 @@ router.patch("/comments", async (req, res) => {
         //formatting the date
         const date = new Date();
         const month = date.getMonth() + 1; 
-        const day = date.getDate(); 
+        const day = date.getDate()-1; 
         const year = date.getFullYear();
         const formattedDate = `${month}/${day}/${year}`;
 
