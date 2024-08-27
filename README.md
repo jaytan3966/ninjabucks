@@ -1,5 +1,5 @@
 # NinjaBucks Dashboard
-NinjaBucks Dashboard is a web application that allows users to manage and interact with a list of ninjas, handle transactions, and redeem rewards. This application is built using React on the client side and Express.js with MongoDB on the server side. The application is deployed via Render.
+The NinjaBucks Dashboard is a web application that allows students and instructors of Codeninjas RFR to manage and modify a list of ninjas and their balances, handle transactions, and redeem rewards. This application is built using React on the client side and Express.js and Node.js on the server side with MongoDB serving as the database. The application is deployed via Render.
 
 ## Features:
 * **Sensei Dashboard**: Manage a list of ninjas, handle transactions, and assign rewards.
@@ -16,7 +16,7 @@ Watch the dashboard in action [here](https://github.com/user-attachments/assets/
 
 ## Important Notice
 Access Restricted:
-Thank you for your interest in the [NinjaBucksDashboard](https://ninjabucksdashboard-fjcn.onrender.com/). Unfortunately, this application is intended for internal use at CodeNinjasRFR and is not publicly accessible. However, I appreciate you for checking out the NinjaBucks Dashboard! If you have any feedback, suggestions, or issues, feel free to open an issue on GitHub or reach out directly. 
+Thank you for your interest in the [NinjaBucksDashboard](https://ninjabucksdashboard-fjcn.onrender.com/). Unfortunately, this application is intended for internal use at CodeNinjasRFR and is not publicly accessible. However, I appreciate you for checking out the NinjaBucks Dashboard! 
 
 \-Jayden Tan, 2024
 
