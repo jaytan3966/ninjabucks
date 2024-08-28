@@ -48,7 +48,7 @@ export default function Login(props) {
             localStorage.removeItem('token');
             window.location.href = '/';
             alert("Session expired, please login again");
-        }, 900000);
+        }, 1800000);
     }
 
     return (
