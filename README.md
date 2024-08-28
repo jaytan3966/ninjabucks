@@ -3,7 +3,7 @@ The NinjaBucks Dashboard is a web application that allows students and instructo
 
 ## Features:
 * **Sensei Dashboard**: Manage a list of ninjas, handle transactions, and assign rewards.
-* **Authentication: Users** can log in as either a Sensei or a Ninja.
+* **Authentication**: Users can log in as either a Sensei or a Ninja.
 * **Transaction Management**: View and manage the transaction history.
 * **Rewards System**: View and redeem rewards based on accumulated points.
 * **Protected Routes**: Restrict access to certain routes based on authentication tokens.
