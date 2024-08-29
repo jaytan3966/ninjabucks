@@ -58,8 +58,8 @@ export default function Login(props) {
                 <h1 className="dashboard-title">{title} Dashboard Login</h1>
 
                 <div className='loginButtons'>
-                    <input type="text" placeholder='Enter name here...' className='btns' id="name" autoComplete='off'></input>
-                    <input type="text" placeholder='Enter password here...' className='btns' id="pwd" autoComplete='off'></input>
+                    <input type="text" placeholder='Enter name here (first letter of first/last name capitalized)' className='btns' id="name" autoComplete='off'></input>
+                    <input type="text" placeholder='Enter password here (IMPACT username)' className='btns' id="pwd" autoComplete='off'></input>
                     <button className='submit' onClick={onSubmit}>Submit</button>
                 </div>
             </div> 
