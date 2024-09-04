@@ -48,7 +48,7 @@ export default function Login(props) {
             localStorage.removeItem('token');
             window.location.href = '/';
             alert("Session expired, please login again");
-        }, 900000);
+        }, 1800000);
     }
 
     return (
@@ -58,8 +58,8 @@ export default function Login(props) {
                 <h1 className="dashboard-title">{title} Dashboard Login</h1>
 
                 <div className='loginButtons'>
-                    <input type="text" placeholder='Enter name here...' className='btns' id="name" autoComplete='off'></input>
-                    <input type="text" placeholder='Enter password here...' className='btns' id="pwd" autoComplete='off'></input>
+                    <input type="text" placeholder='Enter name (capitalize first letter of first/last name)' className='btns' id="name" autoComplete='off'></input>
+                    <input type="text" placeholder='Enter password (IMPACT username)' className='btns' id="pwd" autoComplete='off'></input>
                     <button className='submit' onClick={onSubmit}>Submit</button>
                 </div>
             </div> 
