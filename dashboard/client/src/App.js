@@ -48,6 +48,10 @@ function App(){
     )
 }
 
+window.addEventListener('beforeunload', function() {
+    localStorage.removeItem('token');
+})
+
 export default App;
 
 
