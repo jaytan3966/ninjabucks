@@ -59,7 +59,7 @@ export default function Login(props) {
 
                 <div className='loginButtons'>
                     <input type="text" placeholder='Enter name (capitalize first letter of first/last name)' className='btns' id="name" autoComplete='off'></input>
-                    <input type="text" placeholder='Enter password (IMPACT username)' className='btns' id="pwd" autoComplete='off'></input>
+                    <input type="password" placeholder='Enter password (IMPACT username)' className='btns' id="pwd" autoComplete='off'></input>
                     <button className='submit' onClick={onSubmit}>Submit</button>
                 </div>
             </div> 
